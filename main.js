@@ -74,8 +74,30 @@ const data = {
 
 let currentServicePage = 1;
 let currentProjectPage = 1;
-const servicesPerPage = 6;
-const projectsPerPage = 3;
+let servicesPerPage = 6;
+let projectsPerPage = 3;
+
+function updateItemsPerPage() {
+    const width = window.innerWidth;
+    const oldServices = servicesPerPage;
+    const oldProjects = projectsPerPage;
+
+    if (width <= 768) {
+        servicesPerPage = 2;
+        projectsPerPage = 2;
+    } else {
+        servicesPerPage = 6;
+        projectsPerPage = 3;
+    }
+
+    // Only re-render if values changed
+    if (oldServices !== servicesPerPage || oldProjects !== projectsPerPage) {
+        currentServicePage = 1;
+        currentProjectPage = 1;
+        renderPaginatedServices();
+        renderPaginatedProjects();
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const introOverlay = document.getElementById('intro-overlay');
@@ -87,8 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 2500);
 
+    updateItemsPerPage();
     renderAll(data);
     
+    window.addEventListener('resize', updateItemsPerPage);
+
     // Navbar Scroll
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -148,7 +173,7 @@ function renderPaginatedServices() {
     for (let i = 1; i <= totalPages; i++) {
         const span = document.createElement('span');
         span.innerText = i;
-        if (i === currentServicePage) span.classList.add('active'); // Changed to classList.add
+        if (i === currentServicePage) span.classList.add('active');
         span.onclick = () => { currentServicePage = i; renderPaginatedServices(); };
         paginator.appendChild(span);
     }
@@ -179,7 +204,7 @@ function renderPaginatedProjects() {
     for (let i = 1; i <= totalPages; i++) {
         const span = document.createElement('span');
         span.innerText = i;
-        if (i === currentProjectPage) span.classList.add('active'); // Changed to classList.add
+        if (i === currentProjectPage) span.classList.add('active');
         span.onclick = () => { currentProjectPage = i; renderPaginatedProjects(); };
         paginator.appendChild(span);
     }

@@ -329,7 +329,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px 0; /* Increased for breathing room */
+    padding: 80px 0;
 }
 
 /* About Section */
@@ -346,8 +346,8 @@ body {
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 3rem; /* Slightly larger */
-    margin-bottom: 3rem; /* More breath */
+    font-size: 3rem;
+    margin-bottom: 3rem;
     text-transform: uppercase;
     letter-spacing: 3px;
 }
@@ -430,12 +430,12 @@ body {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 1.5rem; /* More breath */
+    gap: 1.5rem;
 }
 
 .service-card {
     background: #fff;
-    padding: 2rem 1rem; /* More breath */
+    padding: 2rem 1rem;
     border: 1px solid #eee;
     text-align: center;
     transition: var(--transition);
@@ -479,7 +479,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 3rem; /* More breath */
+    margin-top: 3rem;
 }
 
 .paginator span {
@@ -492,6 +492,21 @@ body {
     cursor: pointer;
     font-size: 0.9rem;
     transition: var(--transition);
+    background: #fff;
+    color: var(--text-dark);
+}
+
+/* FIX: Active Paginator Color */
+.paginator span.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.paginator span:hover {
+    border-color: var(--primary);
+    color: var(--primary);
 }
 
 /* Projects */
@@ -499,7 +514,7 @@ body {
     display: grid;
     grid-template-columns: 140px 1fr 180px;
     align-items: center;
-    padding: 1.8rem 2.5rem; /* More breath */
+    padding: 1.8rem 2.5rem;
     border: 1px solid #eee;
     margin-bottom: 1.2rem;
     transition: var(--transition);
@@ -530,46 +545,48 @@ body {
 
 /* Clients + Footer Section */
 .clients { 
-    padding: 80px 0 40px; /* More breath */
+    padding: 80px 0 40px; 
     background: #f9f9f9; 
     text-align: center; 
 }
 .clients-slider { 
     display: flex; 
     justify-content: center; 
-    gap: 4rem; /* More breath */
+    gap: 4rem; 
     flex-wrap: wrap; 
     align-items: center; 
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Gray highlight for "Confían en" */
 .clients .section-title {
-    color: #888; /* Dark Gray */
+    color: #888;
     font-size: 2.2rem;
+    margin-bottom: 3rem;
 }
 .clients .section-title .red {
     color: var(--primary);
     font-weight: 700;
 }
 
+/* FIX: Client Logos appearing different */
 .client-logo-box { 
-    filter: grayscale(100%); 
-    opacity: 0.4; 
+    filter: grayscale(100%) brightness(1.2); 
+    opacity: 0.6; 
     transition: var(--transition); 
-    width: 140px;
-    height: 80px;
+    width: 160px;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
-.client-logo-box:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.15); }
+.client-logo-box:hover { filter: grayscale(0%) brightness(1); opacity: 1; transform: scale(1.1); }
+.client-logo { max-width: 90%; max-height: 90%; object-fit: contain; }
 
 /* Footer */
 .footer {
-    padding: 60px 0 30px; /* More breath */
+    padding: 60px 0 30px;
     background: var(--bg-darker);
     color: #aaa;
     border-top: 1px solid var(--border);
@@ -585,13 +602,86 @@ body {
 .footer-col h4 { color: #fff; font-family: var(--font-heading); margin-bottom: 1.5rem; font-size: 1rem; }
 .footer-col p { font-size: 0.85rem; margin-bottom: 0.6rem; }
 
-@media (max-width: 1200px) {
+/* Mobile Navigation Bar */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+/* RESPONSIVE DESIGN OVERHAUL */
+@media (max-width: 1024px) {
     .services-grid { grid-template-columns: repeat(3, 1fr); }
-    .about, .services, .projects { min-height: auto; padding: 80px 0; }
+    .project-item { grid-template-columns: 100px 1fr 120px; gap: 1.5rem; }
 }
 
 @media (max-width: 768px) {
-    .hero-title { font-size: 2.5rem; }
-    .project-item { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    /* Disable Full Screen on Mobile for better flow */
+    .about, .services, .projects {
+        min-height: auto;
+        padding: 60px 0;
+    }
+
+    .container { padding: 0 1.5rem; }
+
+    /* Navbar Mobile */
+    .navbar { padding: 1rem 0; background: rgba(0,0,0,0.9); }
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: #000;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2rem;
+        transition: 0.4s;
+    }
+    .nav-menu.active { left: 0; }
+    .menu-toggle { display: flex; }
+
+    /* Hero Mobile */
+    .hero-title { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 1rem; margin-bottom: 1.5rem; }
+    .hero-selector-bar { display: none; }
+
+    /* About Mobile */
+    .section-title { font-size: 2rem; }
+    .about-desc { font-size: 1rem; margin-bottom: 2rem; }
+    .mv-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .mv-card { flex-direction: column; }
+    .mv-img-box { width: 100%; height: 120px; }
+    .mv-text { width: 100%; padding: 1.5rem; text-align: center; }
+
+    /* Services Mobile */
+    .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .service-card { min-height: 250px; padding: 1rem 0.5rem; }
+    .service-img-container { height: 80px; }
+    .service-card h3 { font-size: 0.75rem; }
+
+    /* Projects Mobile */
+    .project-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    .project-status { text-align: center; margin-top: 1rem; }
+
+    /* Clients Mobile */
+    .clients-slider { gap: 2rem; }
+    .client-logo-box { width: 120px; height: 60px; }
+}
+
+@media (max-width: 480px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 1.8rem; }
 }

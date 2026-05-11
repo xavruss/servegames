@@ -104,6 +104,14 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('active');
             mobileMenu.classList.toggle('active');
         });
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
     }
 });
 
@@ -140,7 +148,7 @@ function renderPaginatedServices() {
     for (let i = 1; i <= totalPages; i++) {
         const span = document.createElement('span');
         span.innerText = i;
-        if (i === currentServicePage) span.className = 'active';
+        if (i === currentServicePage) span.classList.add('active'); // Changed to classList.add
         span.onclick = () => { currentServicePage = i; renderPaginatedServices(); };
         paginator.appendChild(span);
     }
@@ -171,7 +179,7 @@ function renderPaginatedProjects() {
     for (let i = 1; i <= totalPages; i++) {
         const span = document.createElement('span');
         span.innerText = i;
-        if (i === currentProjectPage) span.className = 'active';
+        if (i === currentProjectPage) span.classList.add('active'); // Changed to classList.add
         span.onclick = () => { currentProjectPage = i; renderPaginatedProjects(); };
         paginator.appendChild(span);
     }

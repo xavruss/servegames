@@ -1,75 +1,88 @@
 const data = {
-  "company": {
-    "name": "ServeGames S.A.",
-    "slogan": "Innovation in every byte, power in every play.",
-    "vision": "Ser líderes en soluciones integrales de seguridad y tecnología, transformando la protección en un pilar de confianza.",
-    "mission": "Proveer soluciones de tecnología personalizadas, desde cámaras de vigilancia y GPS hasta software especializado y redes LAN.",
-    "ruc": "10407047178",
-    "address": "FONAVI II A13 int. 503",
-    "email": "ventas@servegames.net",
-    "phones": ["982138505", "920019377"],
-    "colors": {
-      "primary": "#ff0000",
-      "secondary": "#050505",
-      "accent": "#ffffff"
-    }
-  },
-  "featured": [
-    {
-      "id": 1,
-      "title": "SERVEGAMES S.A.",
-      "subtitle": "Expertos en soluciones tecnológicas integrales para empresas exigentes.",
-      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1920",
-      "cta": "Conócenos",
-      "link": "#about",
-      "isMain": true
+    "company": {
+        "name": "ServeGames",
+        "slogan": "Innovation in every byte, power in every play.",
+        "vision": "Ser líderes en soluciones integrales de seguridad y tecnología, transformando la protección en un pilar de confianza.",
+        "mission": "Proveer soluciones de tecnología personalizadas, desde cámaras de vigilancia y GPS hasta software especializado y redes LAN.",
+        "ruc": "10407047178",
+        "address": "FONAVI II A13 int. 503",
+        "email": "ventas@servegames.net",
+        "phones": ["982138505", "920019377"],
+        "colors": {
+            "primary": "#ff0000",
+            "secondary": "#050505",
+            "accent": "#ffffff"
+        }
     },
-    {
-      "id": 2,
-      "title": "SOFTWARE A MEDIDA",
-      "subtitle": "Desarrollamos herramientas modulares y escalables para optimizar tu negocio.",
-      "image": "Img/hero_software.png",
-      "cta": "Ver Soluciones",
-      "link": "#services"
+    "developer": {
+        "name": "Xavier Russell",
+        "tagline": "Senior Technical Specialist & Systems Developer",
+        "bio": "Especialista técnico con una sólida base en ingeniería de sistemas y desarrollo de bajo nivel. Con dominio de lenguajes que van desde C y Perl hasta TypeScript, Xavier se enfoca en resolver problemas complejos mediante soluciones tecnológicas eficientes, robustas y escalables para el ecosistema de ServeGames",
+        "photo": "Img/16343135.jpg",
+        "stack": ["C", "C++", "Perl", "TypeScript", "Python", "C#", "SQL", "Networking"],
+        "repos": [
+            { "name": "servegames", "desc": "Ecosistema principal y servicios corporativos." },
+            { "name": "SisFact Sunat", "desc": "Plataforma de facturación electrónica certificada." },
+            { "name": "FastAttender", "desc": "Algoritmos de gestión de colas en tiempo real." },
+            { "name": "TicketGo", "desc": "Software de alta concurrencia para eventos masivos." }
+        ]
     },
-    {
-      "id": 3,
-      "title": "NUESTRO JUEGO",
-      "subtitle": "Mundos inmersivos y tecnología de vanguardia en entretenimiento.",
-      "image": "Img/uploaded_image_1765372531914.jpg",
-      "cta": "Explorar Mundo",
-      "link": "#projects"
-    },
-    {
-      "id": 4,
-      "title": "SEGURIDAD & REDES",
-      "subtitle": "CCTV avanzado y Cableado Estructurado con certificación profesional.",
-      "image": "Img/hero_cctv.png",
-      "cta": "Infraestructura",
-      "link": "#services"
-    }
-  ],
-  "services": [
-    { "id": "soft", "title": "Software & Hardware", "description": "Soluciones tecnológicas modulares y de alta calidad.", "image": "Img/service_soft.png" },
-    { "id": "cctv", "title": "Video Vigilancia", "description": "Sistemas CCTV análogos e IP con monitoreo remoto Full HD.", "image": "Img/service_sec.png" },
-    { "id": "cab", "title": "Cableado Estructurado", "description": "Redes de Cobre y Fibra Óptica con certificaciones.", "image": "Img/service_cabling.png" },
-    { "id": "gps", "title": "GPS Vehicular", "description": "Seguimiento en tiempo real y telemetría para flotas.", "image": "Img/service_gps.png" },
-    { "id": "bill", "title": "Facturación Electrónica", "description": "Control de ventas e inventarios con validez Sunat.", "image": "Img/service_soft.png" },
-    { "id": "dom", "title": "Domótica", "description": "Automatización inteligente para el hogar moderno.", "image": "Img/service_sec.png" },
-    { "id": "cloud", "title": "Cloud & Hosting", "description": "Servidores VPS y hosting de alta disponibilidad para gaming.", "image": "Img/service_soft.png" }
-  ],
-  "projects": [
-    { "id": "sis", "title": "SisFact Sunat", "type": "Software", "description": "Sistema completo de facturación electrónica y gestión de inventarios.", "status": "Enterprise" },
-    { "id": "tik", "title": "TiketGo", "type": "Facturación", "description": "Facturador instantáneo para eventos masivos, discotecas y estadios.", "status": "Production" },
-    { "id": "fast", "title": "FastAttender", "type": "Gestión", "description": "Sistema de control de colas para bancos y centros de atención.", "status": "New" },
-    { "id": "click", "title": "ClickGPS", "type": "Logística", "description": "Plataforma avanzada de control vehicular y logística con GPS.", "status": "Active" },
-    { "id": "mon", "title": "Centro de Control", "type": "Seguridad", "description": "Software de monitoreo para atención de emergencias.", "status": "Live" },
-    { "id": "geo", "title": "GeoForce GPS", "type": "Hardware", "description": "Control de vehículos con avisos de motor y telemetría.", "status": "Production" }
-  ],
-  "clients": [
-    "Img/p1 (1).jpg", "Img/p1 (1).png", "Img/p1 (2).jpg", "Img/p1 (2).png", 
-    "Img/p1 (3).jpg", "Img/p1 (4).jpg", "Img/p1 (5).jpg", "Img/p1 (6).jpg"
-  ]
+    "featured": [
+        {
+            "id": 1,
+            "title": "SERVEGAMES",
+            "subtitle": "Expertos en soluciones tecnológicas integrales para empresas exigentes.",
+            "image": "Img/photo-1550745165-9bc0b252726f.avif",
+            "cta": "Conócenos",
+            "link": "#about",
+            "isMain": true
+        },
+        {
+            "id": 2,
+            "title": "SOFTWARE A MEDIDA",
+            "subtitle": "Desarrollamos herramientas modulares y escalables para optimizar tu negocio.",
+            "image": "Img/hero_software.png",
+            "cta": "Ver Soluciones",
+            "link": "#services"
+        },
+        {
+            "id": 3,
+            "title": "NUESTRO JUEGO",
+            "subtitle": "Mundos inmersivos y tecnología de vanguardia en entretenimiento.",
+            "image": "Img/uploaded_image_1765372531914.jpg",
+            "cta": "Explorar Mundo",
+            "link": "#projects"
+        },
+        {
+            "id": 4,
+            "title": "SEGURIDAD & REDES",
+            "subtitle": "CCTV avanzado y Cableado Estructurado con certificación profesional.",
+            "image": "Img/hero_cctv.png",
+            "cta": "Infraestructura",
+            "link": "#services"
+        }
+    ],
+    "services": [
+        { "id": "soft", "title": "Software & Hardware", "description": "Soluciones tecnológicas modulares y de alta calidad.", "image": "Img/service_soft.png" },
+        { "id": "cctv", "title": "Video Vigilancia", "description": "Sistemas CCTV análogos e IP con monitoreo remoto Full HD.", "image": "Img/service_sec.png" },
+        { "id": "cab", "title": "Cableado Estructurado", "description": "Redes de Cobre y Fibra Óptica con certificaciones.", "image": "Img/service_cabling.png" },
+        { "id": "gps", "title": "GPS Vehicular", "description": "Seguimiento en tiempo real y telemetría para flotas.", "image": "Img/service_gps.png" },
+        { "id": "bill", "title": "Facturación Electrónica", "description": "Control de ventas e inventarios con validez Sunat.", "image": "Img/service_soft.png" },
+        { "id": "dom", "title": "Domótica", "description": "Automatización inteligente para el hogar moderno.", "image": "Img/service_sec.png" },
+        { "id": "cloud", "title": "Cloud & Hosting", "description": "Servidores VPS y hosting de alta disponibilidad para gaming.", "image": "Img/service_soft.png" }
+    ],
+    "projects": [
+        { "id": "sis", "title": "SisFact Sunat", "type": "Software", "description": "Sistema completo de facturación electrónica y gestión de inventarios.", "status": "Enterprise" },
+        { "id": "tik", "title": "TiketGo", "type": "Facturación", "description": "Facturador instantáneo para eventos masivos, discotecas y estadios.", "status": "Production" },
+        { "id": "fast", "title": "FastAttender", "type": "Gestión", "description": "Sistema de control de colas para bancos y centros de atención.", "status": "New" },
+        { "id": "click", "title": "ClickGPS", "type": "Logística", "description": "Plataforma avanzada de control vehicular y logística con GPS.", "status": "Active" },
+        { "id": "mon", "title": "Centro de Control", "type": "Seguridad", "description": "Software de monitoreo para atención de emergencias.", "status": "Live" },
+        { "id": "geo", "title": "GeoForce GPS", "type": "Hardware", "description": "Control de vehículos con avisos de motor y telemetría.", "status": "Production" }
+    ],
+    "clients": [
+        "Img/p1 (1).jpg", "Img/p1 (1).png", "Img/p1 (2).jpg", "Img/p1 (2).png",
+        "Img/p1 (3).jpg", "Img/p1 (4).jpg", "Img/p1 (5).jpg", "Img/p1 (6).jpg"
+    ]
 };
 
 let currentServicePage = 1;
@@ -90,7 +103,6 @@ function updateItemsPerPage() {
         projectsPerPage = 3;
     }
 
-    // Only re-render if values changed
     if (oldServices !== servicesPerPage || oldProjects !== projectsPerPage) {
         currentServicePage = 1;
         currentProjectPage = 1;
@@ -111,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateItemsPerPage();
     renderAll(data);
-    
+
     window.addEventListener('resize', updateItemsPerPage);
 
     // Navbar Scroll
@@ -133,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            
+
             if (isMobile) {
                 window.location.href = `https://wa.me/${waNumber}?text=Hola ServeGames, me gustaría recibir más información.`;
             } else {
@@ -169,7 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenu.classList.toggle('active');
         });
 
-        // Close menu on link click
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -184,8 +195,40 @@ function renderAll(data) {
     renderPaginatedServices();
     renderPaginatedProjects();
     renderClients(data.clients);
+    renderDeveloper(data.developer);
     renderFooter(data.company);
     initCarousel();
+}
+
+function renderDeveloper(dev) {
+    const container = document.getElementById('developer-container');
+    if (!container) return;
+    container.innerHTML = `
+        <div class="dev-grid">
+            <div class="dev-photo-box reveal">
+                <img src="${dev.photo}" alt="${dev.name}" class="dev-photo">
+            </div>
+            <div class="dev-info reveal">
+                <span class="dev-tagline">${dev.tagline}</span>
+                <h2>${dev.name}</h2>
+                <p class="dev-bio">${dev.bio}</p>
+                <div class="dev-stack">
+                    ${dev.stack.map(s => `<span class="stack-badge">${s}</span>`).join('')}
+                </div>
+                <div class="dev-repos">
+                    <h4>Proyectos Destacados (GitHub)</h4>
+                    <div class="repo-list">
+                        ${dev.repos.map(r => `
+                            <div class="repo-card">
+                                <h5>${r.name}</h5>
+                                <p>${r.desc}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
 }
 
 function renderPaginatedServices() {
@@ -278,7 +321,7 @@ function renderHero(featured) {
             </div>
         </div>
     `).join('');
-    
+
     tabsContainer.innerHTML = featured.map((item, index) => `
         <div class="selector-tab ${index === 0 ? 'active' : ''}" data-index="${index}">
             <h4>${item.title.split(' ')[0]}</h4>
@@ -331,7 +374,7 @@ function renderFooter(company) {
     footerContainer.innerHTML = `
         <div class="footer-grid">
             <div class="footer-col">
-                <div class="footer-logo">${company.name.split(' ')[0]}<span>S.A.</span></div>
+                <div class="footer-logo">${company.name.split(' ')[0]}<span></span></div>
                 <p>${company.slogan}</p>
                 <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">RUC: ${company.ruc}</p>
             </div>

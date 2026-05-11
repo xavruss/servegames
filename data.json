@@ -1,6 +1,6 @@
 {
   "company": {
-    "name": "ServeGames S.A.",
+    "name": "ServeGames",
     "slogan": "Innovation in every byte, power in every play.",
     "colors": {
       "primary": "#ff0000",
@@ -11,7 +11,7 @@
   "featured": [
     {
       "id": 1,
-      "title": "SERVEGAMES S.A.",
+      "title": "SERVEGAMES",
       "subtitle": "Innovation in every byte, power in every play.",
       "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1920",
       "cta": "Ver Portafolio",

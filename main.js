@@ -121,6 +121,45 @@ document.addEventListener('DOMContentLoaded', () => {
         else navbar.classList.remove('scrolled');
     });
 
+    // Contact Button Logic (WA)
+    const contactBtns = document.querySelectorAll('.btn-contact');
+    const chatWidget = document.getElementById('chat-widget');
+    const closeChat = document.getElementById('close-chat');
+    const sendWa = document.getElementById('send-wa');
+    const chatInput = document.getElementById('chat-input');
+    const waNumber = "51913907785";
+
+    contactBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                window.location.href = `https://wa.me/${waNumber}?text=Hola ServeGames, me gustaría recibir más información.`;
+            } else {
+                chatWidget.style.display = chatWidget.style.display === 'flex' ? 'none' : 'flex';
+            }
+        });
+    });
+
+    if (closeChat) {
+        closeChat.addEventListener('click', () => chatWidget.style.display = 'none');
+    }
+
+    if (sendWa) {
+        sendWa.addEventListener('click', () => {
+            const msg = chatInput.value || "Hola ServeGames, me gustaría recibir más información.";
+            const url = `https://web.whatsapp.com/send?phone=${waNumber}&text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
+            chatWidget.style.display = 'none';
+            chatInput.value = '';
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendWa.click();
+        });
+    }
+
     // Mobile Menu
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.nav-menu');

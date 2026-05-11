@@ -69,7 +69,8 @@ const data = {
         { "id": "gps", "title": "GPS Vehicular", "description": "Seguimiento en tiempo real y telemetría para flotas.", "image": "Img/service_gps.png" },
         { "id": "bill", "title": "Facturación Electrónica", "description": "Control de ventas e inventarios con validez Sunat.", "image": "Img/service_soft.png" },
         { "id": "dom", "title": "Domótica", "description": "Automatización inteligente para el hogar moderno.", "image": "Img/service_sec.png" },
-        { "id": "cloud", "title": "Cloud & Hosting", "description": "Servidores VPS y hosting de alta disponibilidad para gaming.", "image": "Img/service_soft.png" }
+        { "id": "cloud", "title": "Cloud & Hosting", "description": "Servidores VPS y hosting de alta disponibilidad para gaming.", "image": "Img/service_soft.png" },
+        { "id": "sms", "title": "API Envíos SMS", "description": "Integración de mensajería masiva para alertas y notificaciones.", "image": "Img/service_soft.png" }
     ],
     "projects": [
         { "id": "sis", "title": "SisFact Sunat", "type": "Software", "description": "Sistema completo de facturación electrónica y gestión de inventarios.", "status": "Enterprise" },

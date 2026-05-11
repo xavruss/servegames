@@ -1,0 +1,141 @@
+{
+  "company": {
+    "name": "ServeGames S.A.",
+    "slogan": "Innovation in every byte, power in every play.",
+    "colors": {
+      "primary": "#ff0000",
+      "secondary": "#050505",
+      "accent": "#ffffff"
+    }
+  },
+  "featured": [
+    {
+      "id": 1,
+      "title": "SERVEGAMES S.A.",
+      "subtitle": "Innovation in every byte, power in every play.",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1920",
+      "cta": "Ver Portafolio",
+      "link": "#projects",
+      "isMain": true
+    },
+    {
+      "id": 2,
+      "title": "SOFTWARE A MEDIDA",
+      "subtitle": "Desarrollo robusto para clientes exigentes con visión de futuro.",
+      "image": "C:/Users/XAS/.gemini/antigravity/brain/0e4151c9-0aee-48f6-b19e-ec6243b34625/custom_software_dev_hero_1778515812364.png",
+      "cta": "Nuestras Soluciones",
+      "link": "#services"
+    },
+    {
+      "id": 3,
+      "title": "NUESTRO JUEGO",
+      "subtitle": "Explora mundos épicos y vive aventuras inigualables.",
+      "image": "d:/Xav/Proyectos/servegames/Img/uploaded_image_1765372531914.jpg",
+      "cta": "Explorar Mundo",
+      "link": "#projects"
+    }
+  ],
+  "services": [
+    {
+      "id": "game-dev",
+      "title": "Software & Game Dev",
+      "description": "Desarrollo de videojuegos y aplicaciones multiplataforma (Windows/Android).",
+      "icon": "🎮"
+    },
+    {
+      "id": "hosting",
+      "title": "Hosting & VPS",
+      "description": "Servidores de alto rendimiento para gaming y aplicaciones empresariales.",
+      "icon": "☁️"
+    },
+    {
+      "id": "cctv",
+      "title": "CCTV & Networking",
+      "description": "Instalación de seguridad y cableado estructurado profesional.",
+      "icon": "📹"
+    },
+    {
+      "id": "advertising",
+      "title": "Digital Advertising",
+      "description": "Publicidad estratégica y posicionamiento de marca.",
+      "icon": "📢"
+    }
+  ],
+  "projects": [
+    {
+      "id": "servegames-public",
+      "title": "ServeGames Public",
+      "type": "Web",
+      "description": "Plataforma descriptiva de servicios corporativos.",
+      "status": "Active"
+    },
+    {
+      "id": "muemu",
+      "title": "MuEMu",
+      "type": "C++",
+      "description": "Servidor de alto rendimiento para MMORPG.",
+      "status": "Production"
+    },
+    {
+      "id": "ticketgo",
+      "title": "TicketGo",
+      "type": "HTML/JS",
+      "description": "Sistema avanzado de gestión de tickets.",
+      "status": "Live"
+    },
+    {
+      "id": "sisfact",
+      "title": "SisFact",
+      "type": "TypeScript",
+      "description": "Sistema de facturación electrónica integrado.",
+      "status": "Enterprise"
+    },
+    {
+      "id": "fastmype",
+      "title": "FastMype",
+      "type": "CSS/JS",
+      "description": "Solución de presencia web rápida para Mypes.",
+      "status": "Active"
+    },
+    {
+      "id": "websockets",
+      "title": "WebSockets Hub",
+      "type": "TypeScript",
+      "description": "Motor de comunicación en tiempo real.",
+      "status": "Core"
+    },
+    {
+      "id": "global",
+      "title": "Global System",
+      "type": "PHP",
+      "description": "ERP para gestión de procesos empresariales.",
+      "status": "Legacy/Stable"
+    },
+    {
+      "id": "dbproyects",
+      "title": "DBProyects",
+      "type": "TSQL",
+      "description": "Gestión masiva de datos y optimización SQL.",
+      "status": "Backend"
+    },
+    {
+      "id": "serprint",
+      "title": "SerPrint",
+      "type": "C#",
+      "description": "Utilidad de impresión silenciosa y automatizada.",
+      "status": "Utility"
+    },
+    {
+      "id": "fastattender",
+      "title": "FastAttender",
+      "type": "CSS/C#",
+      "description": "Lanzador y gestor de atención al cliente.",
+      "status": "Desktop"
+    }
+  ],
+  "clients": [
+    "Telemovil Peru S.A.",
+    "Telemovil Data S.A.",
+    "N&W Seguridad Total"
+  ]
+}

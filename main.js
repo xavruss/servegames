@@ -82,7 +82,8 @@ const data = {
     ],
     "clients": [
         "Img/p1 (1).jpg", "Img/p1 (1).png", "Img/p1 (2).jpg", "Img/p1 (2).png",
-        "Img/p1 (3).jpg", "Img/p1 (4).jpg", "Img/p1 (5).jpg", "Img/p1 (6).jpg"
+        "Img/p1 (3).jpg", "Img/p1 (4).jpg", "Img/p1 (5).jpg", "Img/p1 (6).jpg",
+        "Img/p1 (7).png"
     ]
 };
 
@@ -170,6 +171,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
         chatInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') sendWa.click();
+        });
+    }
+
+    // Share Button Logic
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+        shareBtn.addEventListener('click', async () => {
+            const shareData = {
+                title: 'ServeGames | Soluciones Tecnológicas',
+                text: 'Echa un vistazo a las soluciones de seguridad y tecnología de ServeGames.',
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                } catch (err) {
+                    console.log('Error compartiendo:', err);
+                }
+            } else {
+                // Fallback: Copy to clipboard
+                try {
+                    await navigator.clipboard.writeText(window.location.href);
+                    alert('¡Enlace copiado al portapapeles!');
+                } catch (err) {
+                    console.error('Error al copiar:', err);
+                }
+            }
         });
     }
 

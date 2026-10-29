@@ -56,7 +56,7 @@
   <!-- CONTENEDOR DEL DOCUMENTO CON ZOOM Y ESCALADO INTELIGENTE -->
   <main class="cert-viewport" id="cert-viewport">
     <div class="cert-scale-wrapper" id="cert-wrapper">
-      <div class="a4-sheet" spellcheck="false">
+      <div class="a4-sheet" id="printable-certificate" spellcheck="false" lang="es-PE">
     <svg class="cert-vector-header" viewBox="0 0 800 36" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -71,47 +71,45 @@
       <polygon points="0,0 800,0 800,24 640,24 620,32 0,32" fill="url(#headerGrad)" />
       <polygon points="0,32 620,32 610,36 0,36" fill="url(#goldGrad)" opacity="0.9" />
     </svg>
-    <div class="cert-watermark">15 DÍAS MÁX.</div>
+    <div class="cert-watermark" id="cert-watermark-text">15 DÍAS MÁX.</div>
     <div class="cert-inner">
       <div class="cert-header">
         <div class="cert-brand">
-          <img src="../../assets/logo_xav.png" alt="Logo" class="cert-logo">
+          <img id="cert-logo-img" src="../../assets/logo_xav.png" alt="Logo" class="cert-logo">
           <div class="cert-brand-info">
-            <h2>XAVIER FIGUEROA</h2>
-            <div class="company-badge">SERVICIOS DE INGENIERÍA & AUTOMATIZACIÓN</div>
-            <p>Urb. San Francisco Mz. A Lt. 20, Amarilis - Huánuco | Móvil / WhatsApp: (+51) 920 019 377 | Correo: xafiruss@gmail.com</p>
+            <h2 id="cert-company-name">XAVIER FIGUEROA</h2>
+            <div class="company-badge" id="cert-company-badge">SERVICIOS DE INGENIERÍA & AUTOMATIZACIÓN</div>
+            <p id="cert-company-contact">Urb. San Francisco Mz. A Lt. 20, Amarilis - Huánuco | Móvil / WhatsApp: (+51) 920 019 377 | Correo: xafiruss@gmail.com</p>
           </div>
         </div>
         <div class="cert-meta-box">
-          <span class="cert-code-badge">XF-CER-EC-2026-0001</span>
-          <div class="meta-row">Emisión: <strong>28 de Octubre de 2026</strong></div>
-          <div class="meta-row">Régimen: <strong>Bucle Continuo FIFO</strong></div>
+          <span class="cert-code-badge" id="view-cert-code">XF-CER-EC-2026-0001</span>
+          <div class="meta-row">Emisión: <strong id="view-cert-date">28 de Octubre de 2026</strong></div>
+          <div class="meta-row">Régimen: <strong id="view-cert-expire">Bucle Continuo FIFO</strong></div>
         </div>
       </div>
       <div class="cert-title-section">
-        <div class="cert-title-main">CERTIFICADO TÉCNICO DE CAPACIDAD Y RETENCIÓN DE VIDEO</div>
-        <div class="cert-subtitle">SISTEMA DE GRABACIÓN DIGITAL NVR / CCTV - PROTOCOLO DE SOBREESCRITURA CÍCLICA</div>
+        <div class="cert-title-main" id="view-title-main">CERTIFICADO TÉCNICO DE CAPACIDAD Y RETENCIÓN DE VIDEO</div>
+        <div class="cert-subtitle" id="view-title-sub">SISTEMA DE GRABACIÓN DIGITAL NVR / CCTV - PROTOCOLO DE SOBREESCRITURA CÍCLICA</div>
         <div class="cert-title-rule"></div>
       </div>
       <div class="cert-client-card">
         <div class="client-field">
           <span class="client-label">Razón Social del Cliente:</span>
-          <span class="client-val">PROMOTORA DE SERVICIOS EDUCATIVOS 'LA DIVINA MISERICORDIA' S.R.L.</span>
+          <span class="client-val" id="view-client-name">PROMOTORA DE SERVICIOS EDUCATIVOS 'LA DIVINA MISERICORDIA' S.R.L.</span>
         </div>
         <div class="client-field">
           <span class="client-label">Número de R.U.C.:</span>
-          <span class="client-val" style="font-family: monospace; font-size: 0.88rem;">20404581741</span>
+          <span class="client-val" id="view-client-ruc" style="font-family: monospace; font-size: 0.88rem;">20404581741</span>
         </div>
         <div class="client-field">
           <span class="client-label">Ubicación / Predio Evaluado:</span>
-          <span class="client-val">JR. CRESPO CASTILLO NRO 667, HUÁNUCO</span>
+          <span class="client-val" id="view-client-local">JR. CRESPO CASTILLO NRO 667, HUÁNUCO</span>
         </div>
         <div class="client-field">
           <span class="client-label">Disciplina / Especialidad:</span>
-          <span class="client-val">EC - CIRCUITO CERRADO DE TELEVISIÓN & SEGURIDAD ELECTRÓNICA</span>
-        </div>
-      </div>
-      <div class="cert-intro-text">
+          <span class="client-val" id="view-client-city">EC - CIRCUITO CERRADO DE TELEVISIÓN & SEGURIDAD ELECTRÓNICA</span>
+       <div class="cert-intro-text" id="view-intro-text">
         Por medio del presente documento, nuestro personal técnico especializado en Seguridad Electrónica y Sistemas Digitales de Videovigilancia, certifica formalmente que ha realizado la <strong>AUDITORÍA TÉCNICA E INSPECCIÓN DE ALMACENAMIENTO</strong> del <strong>SISTEMA DE GRABACIÓN DIGITAL EN RED (NVR / CCTV)</strong> instalado en la sede de la institución.<br><br>
         Se deja constancia fehaciente de que el grabador digital opera bajo el estándar industrial de <strong>Sobreescritura Automática Cíclica (Buffer FIFO - First In, First Out)</strong> con compresión H.265+, determinándose que la capacidad física de las unidades de disco duro rígido (HDD) instaladas proporciona un <strong>tiempo máximo de almacenamiento histórico de quince (15) días calendario continuos</strong> a partir de la fecha.<br><br>
         En virtud de dicho principio operativo intrínseco al equipamiento, al completarse el búfer de almacenamiento, los sectores magnéticos se sobreescriben automáticamente de manera irreversible y definitiva. Por tanto, se dictamina formalmente que <strong>ES TÉCNICA, FÍSICA Y FORENSEMENTE IMPOSIBLE LA RECUPERACIÓN O REPRODUCCIÓN DE REGISTROS DE VIDEO DEL MES DE JULIO DE 2026</strong>, al encontrarse fuera del rango de retención por un margen superior a los noventa (90) días calendario.
@@ -126,7 +124,7 @@
             <th style="width: 115px; text-align: center;">ESTADO / DICTAMEN</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="view-tbody-equipos">
           <tr>
             <td style="text-align: center; font-weight: 700; color: #64748b;">01</td>
             <td><strong>Grabador de Video en Red (NVR) 4K</strong> de 16 Canales IP en régimen de grabación continua 24/7 con códec H.265+</td>
@@ -164,21 +162,21 @@
           </tr>
         </tbody>
       </table>
-      <div class="cert-warranty-box">
-        <div class="warranty-title">⚖️ DICTAMEN TÉCNICO PERICIAL & CONSTANCIA DE NO DISPONIBILIDAD:</div>
-        <div class="warranty-text">
+      <div class="cert-warranty-box" id="box-warranty">
+        <div class="warranty-title" id="view-warranty-title">⚖️ DICTAMEN TÉCNICO PERICIAL & CONSTANCIA DE NO DISPONIBILIDAD:</div>
+        <div class="warranty-text" id="view-warranty-text">
           Se certifica de manera concluyente que el sistema NVR de la institución, configurado en bucle cerrado con sobreescritura continua por bloques temporales de 15 días, no conserva ni dispone de respaldo técnico de grabaciones del mes de Julio de 2026. La información solicitada fue purgada y sobrescrita de manera automática e irreversible por el ciclo natural de almacenamiento del hardware, sin existir medio técnico ni forense para su recuperación o restauración. El presente certificado se expide a solicitud de la Dirección para los fines administrativos, de descargo legal o de atención a terceros que correspondan.
         </div>
       </div>
       <div class="cert-bottom-grid">
         <div class="qr-box">
           <div class="qr-placeholder" id="qr-container"><a href="https://sgdigital.net/validar.html?id=XF-CER-EC-2026-0001" target="_blank" title="Escanear o hacer clic para verificar en línea" style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h35v35H0z"/><path stroke="#0f172a" d="M1 1.5h7m2 0h1m1 0h2m5 0h2m1 0h1m1 0h1m2 0h7M1 2.5h1m5 0h1m3 0h3m2 0h1m5 0h1m4 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h1m1 0h2m2 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h1m2 0h1m5 0h1m1 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h2m1 0h8m4 0h2m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h2m2 0h3m2 0h1m3 0h1m1 0h1m2 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m1 0h1m4 0h1m4 0h3M1 9.5h1m1 0h5m4 0h1m1 0h2m1 0h2m2 0h1m1 0h1m1 0h1m1 0h5M3 10.5h1m2 0h1m1 0h1m2 0h4m2 0h2m1 0h5m2 0h2m1 0h2m1 0h1M5 11.5h5m1 0h1m1 0h6m2 0h3m5 0h1m1 0h2M3 12.5h2m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h2m2 0h1m3 0h4M1 13.5h1m2 0h1m1 0h2m1 0h1m1 0h3m1 0h3m4 0h4m1 0h4m1 0h2M1 14.5h1m3 0h2m1 0h3m3 0h1m1 0h1m2 0h1m2 0h2m2 0h1m1 0h1m1 0h1m1 0h2M2 15.5h1m2 0h1m1 0h1m1 0h1m1 0h2m3 0h3m3 0h2m1 0h3m3 0h2M2 16.5h1m6 0h3m2 0h1m1 0h1m2 0h1m2 0h1m1 0h4m1 0h1m1 0h1M2 17.5h2m3 0h1m4 0h1m3 0h1m1 0h1m1 0h1m2 0h4m1 0h3m2 0h1M1 18.5h1m1 0h1m4 0h2m2 0h2m1 0h1m1 0h1m1 0h4m1 0h1m1 0h3m1 0h2m1 0h1M1 19.5h2m3 0h4m1 0h1m2 0h1m1 0h1m2 0h1m2 0h1m2 0h5m1 0h2M1 20.5h2m1 0h1m3 0h1m3 0h3m1 0h2m2 0h2m4 0h1m1 0h4M1 21.5h1m3 0h3m1 0h2m4 0h2m2 0h2m4 0h3m1 0h2m1 0h1M1 22.5h1m1 0h1m2 0h1m1 0h3m2 0h5m2 0h1m1 0h5m1 0h1m1 0h1m2 0h1M1 23.5h1m1 0h5m1 0h2m1 0h1m1 0h1m4 0h4m2 0h1m2 0h1m1 0h1m1 0h1M1 24.5h1m1 0h1m1 0h1m6 0h4m1 0h1m4 0h2m1 0h3m2 0h2m1 0h1M1 25.5h1m2 0h1m1 0h2m1 0h1m4 0h1m3 0h1m1 0h1m2 0h7m2 0h1M9 26.5h1m1 0h3m3 0h6m2 0h1m3 0h1m1 0h3M1 27.5h7m4 0h2m2 0h3m3 0h4m1 0h1m1 0h1m1 0h2M1 28.5h1m5 0h1m1 0h2m2 0h4m1 0h5m1 0h2m3 0h3M1 29.5h1m1 0h3m1 0h1m1 0h2m1 0h4m1 0h1m2 0h3m2 0h6m2 0h1M1 30.5h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m1 0h3m2 0h2m1 0h1m2 0h1m3 0h1M1 31.5h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m1 0h2m4 0h4m1 0h2m1 0h2M1 32.5h1m5 0h1m2 0h1m2 0h2m1 0h1m2 0h1m2 0h1m3 0h2m1 0h3M1 33.5h7m1 0h1m1 0h2m2 0h2m1 0h1m1 0h1m3 0h1m3 0h1m3 0h1"/></svg>
-</a></div>
-          <span class="qr-caption">VALIDACIÓN DIGITAL QR<br><strong>XF-CER-EC-2026-0001</strong></span>
+        </a></div>
+          <span class="qr-caption">VALIDACIÓN DIGITAL QR<br><strong id="view-qr-hash">XF-CER-EC-2026-0001</strong></span>
         </div>
         <div class="badges-box">
           <span style="font-size: 0.6rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">ESTÁNDARES & MARCO LEGAL:</span>
-          <div class="compliance-pills">
+          <div class="compliance-pills" id="view-compliance-pills">
             <span class="compliance-pill">RETENCIÓN MÁX. 15 DÍAS</span>
             <span class="compliance-pill">SOBREESCRITURA FIFO</span>
             <span class="compliance-pill">LEY N° 29733 (DATOS PERS.)</span>
@@ -189,10 +187,21 @@
           </p>
         </div>
         <div class="signature-box">
+          <img id="view-signature-img" src="../../assets/firma_azul.png" alt="Firma Oficial" class="signature-img">
           <div class="signature-line">
-            <div class="signer-name">Pro. Tec. Xavier Figueroa S.</div>
-            <div class="signer-title">Especialista en Seguridad Electrónica & Automatización</div>
-            <div class="signer-cip">Ingeniería y Servicios Especializados</div>
+            <div class="signer-name" id="view-signer-name">Pro. Tec. Xavier Figueroa S.</div>
+            <div class="signer-title" id="view-signer-cargo">Especialista en Seguridad Electrónica & Automatización</div>
+            <div class="signer-cip" id="view-signer-cip">Ingeniería y Servicios Especializados</div>
+            <div class="digital-seal-tag" id="view-digital-seal-tag">
+              <div class="dst-row-main">
+                <span class="dst-badge">🔏 FIRMA DIGITAL</span>
+                <span class="dst-initials">XRFA</span>
+              </div>
+              <div class="dst-row-sub">
+                <span>Fecha: <strong id="view-digital-seal-date">28/10/2026</strong></span>
+                <span class="dst-status">✓ Cert. Digital X.509</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

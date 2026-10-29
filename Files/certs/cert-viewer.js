@@ -151,10 +151,23 @@
     setVal('modal-val-signer', `${signer} (${cargo})`);
   }
 
+  // Ajustar enlace del QR si se está viendo en local (file://)
+  function setupSmartQrLink() {
+    const qrLink = document.querySelector('#qr-container a');
+    if (!qrLink) return;
+    if (window.location.protocol === 'file:') {
+      const code = document.getElementById('view-cert-code')?.innerText?.trim() || 'XF-CER-F-2026-0001';
+      qrLink.href = `../../../validar.html?id=${encodeURIComponent(code)}`;
+      qrLink.target = '_self';
+      qrLink.title = 'Verificar en el Portal Local';
+    }
+  }
+
   // Inicializar al cargar el DOM
   document.addEventListener('DOMContentLoaded', () => {
     sanitizeAssets();
     populateFichaDetails();
+    setupSmartQrLink();
     applyResponsiveScale();
 
     window.addEventListener('resize', applyResponsiveScale);
@@ -177,6 +190,7 @@
   if (document.readyState === 'interactive' || document.readyState === 'complete') {
     sanitizeAssets();
     populateFichaDetails();
+    setupSmartQrLink();
     applyResponsiveScale();
   }
 })();

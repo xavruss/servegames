@@ -13,6 +13,7 @@
     "garantia_hasta": "29 de Octubre de 2027",
     "estado": "VIGENTE",
     "normativas": ["RNE NORMA A.130", "NFPA 72", "NTP 350.043", "ITSE / CNE"],
+    "ruta_pdf": "Files/certs/2026/CER/XF-CER-F-2026-0001.pdf",
     "ruta_html": "Files/certs/2026/CER/XF-CER-F-2026-0001.html"
   },
   {
@@ -29,6 +30,7 @@
     "garantia_hasta": "28 de Octubre de 2027",
     "estado": "VIGENTE",
     "normativas": ["RNE", "ITSE", "NTP CCTV"],
+    "ruta_pdf": "Files/certs/2026/CER/XF-CER-EC-2026-0001.pdf",
     "ruta_html": "Files/certs/2026/CER/XF-CER-EC-2026-0001.html"
   },
   {
@@ -45,6 +47,7 @@
     "garantia_hasta": "29 de Octubre de 2027",
     "estado": "VIGENTE",
     "normativas": ["RNE NORMA A.130", "NFPA 72"],
+    "ruta_pdf": "Files/certs/2026/CER/XF-CER-F-2026-0002.pdf",
     "ruta_html": "Files/certs/2026/CER/XF-CER-F-2026-0002.html"
   },
   {
@@ -61,6 +64,7 @@
     "garantia_hasta": "15 de Octubre de 2025",
     "estado": "CUMPLIDO",
     "normativas": ["RNE NORMA A.130", "NFPA 72"],
+    "ruta_pdf": "Files/certs/2024/CER/XF-CER-F-2024-0001.pdf",
     "ruta_html": "Files/certs/2024/CER/XF-CER-F-2024-0001.html"
   }
 ]

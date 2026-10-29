@@ -385,33 +385,33 @@ html, body {
 /* TITLE SECTION */
 .cert-title-section {
   text-align: center;
-  margin: 5px 0 10px 0;
+  margin: 2px 0 5px 0;
 }
 
 .cert-title-main {
   font-family: 'Cinzel', serif;
-  font-size: 1.28rem;
+  font-size: 1.14rem;
   font-weight: 800;
   color: #1e3a8a;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .cert-subtitle {
-  font-size: 0.84rem;
+  font-size: 0.74rem;
   font-weight: 700;
   color: #0f172a;
-  margin-top: 3px;
+  margin-top: 2px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
 
 .cert-title-rule {
-  width: 140px;
-  height: 3px;
+  width: 120px;
+  height: 2px;
   background: linear-gradient(90deg, #1e3a8a, #d97706, #1e3a8a);
-  margin: 6px auto;
+  margin: 3px auto;
   border-radius: 2px;
 }
 
@@ -419,13 +419,13 @@ html, body {
 .cert-client-card {
   background: #f8fafc;
   border: 1px solid #cbd5e1;
-  border-left: 5px solid #1e3a8a;
-  border-radius: 6px;
-  padding: 8px 12px;
-  margin-bottom: 10px;
+  border-left: 4px solid #1e3a8a;
+  border-radius: 5px;
+  padding: 4px 8px;
+  margin-bottom: 5px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5px 14px;
+  gap: 2px 10px;
 }
 
 .client-field {
@@ -434,7 +434,7 @@ html, body {
 }
 
 .client-label {
-  font-size: 0.63rem;
+  font-size: 0.58rem;
   font-weight: 700;
   color: #64748b;
   text-transform: uppercase;
@@ -442,45 +442,45 @@ html, body {
 }
 
 .client-val {
-  font-size: 0.77rem;
+  font-size: 0.70rem;
   font-weight: 700;
   color: #0f172a;
 }
 
 /* INTRO TEXT */
 .cert-intro-text {
-  font-size: 0.75rem;
+  font-size: 0.63rem;
   color: #334155;
-  line-height: 1.42;
+  line-height: 1.25;
   text-align: justify;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 /* TABLE OF COMPONENTS */
 .cert-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.72rem;
-  margin-bottom: 10px;
+  font-size: 0.62rem;
+  margin-bottom: 5px;
 }
 
 .cert-table th {
   background: #0f2744;
   color: #ffffff;
-  padding: 3px 6px;
+  padding: 2px 5px;
   text-align: left;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   letter-spacing: 0.03em;
 }
 
 .cert-table td {
-  padding: 2.5px 6px;
+  padding: 2px 5px;
   border-bottom: 1px solid #e2e8f0;
   color: #1e293b;
-  font-size: 0.67rem;
-  line-height: 1.18;
+  font-size: 0.61rem;
+  line-height: 1.15;
 }
 
 .cert-table tr:nth-child(even) td {
@@ -491,9 +491,9 @@ html, body {
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  padding: 1px 5px;
+  padding: 1px 4px;
   border-radius: 3px;
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   font-weight: 700;
   background: #dcfce7;
   color: #15803d;
@@ -504,9 +504,9 @@ html, body {
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  padding: 1px 6px;
+  padding: 1px 5px;
   border-radius: 3px;
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   font-weight: 700;
   background: #fee2e2;
   color: #b91c1c;
@@ -517,33 +517,33 @@ html, body {
 .cert-warranty-box {
   background: #eff6ff;
   border: 1px solid #bfdbfe;
-  border-radius: 6px;
-  padding: 5px 8px;
-  margin-bottom: 6px;
+  border-radius: 5px;
+  padding: 3px 6px;
+  margin-bottom: 4px;
 }
 
 .warranty-title {
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 800;
   color: #1e40af;
   text-transform: uppercase;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .warranty-text {
-  font-size: 0.66rem;
+  font-size: 0.58rem;
   color: #1e3a8a;
-  line-height: 1.25;
+  line-height: 1.18;
 }
 
 /* SIGNATURE AND VALIDATION FOOTER */
 .cert-bottom-grid {
   display: grid;
-  grid-template-columns: 110px 1fr 240px;
-  gap: 12px;
+  grid-template-columns: 95px 1fr 220px;
+  gap: 8px;
   align-items: flex-end;
   margin-top: auto;
-  padding-top: 6px;
+  padding-top: 2px;
 }
 
 .qr-box {
@@ -554,11 +554,11 @@ html, body {
 }
 
 .qr-placeholder {
-  width: 78px;
-  height: 78px;
+  width: 70px;
+  height: 70px;
   background: #fff;
   border: 1px solid #cbd5e1;
-  padding: 4px;
+  padding: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -572,9 +572,9 @@ html, body {
 }
 
 .qr-caption {
-  font-size: 0.58rem;
+  font-size: 0.56rem;
   color: #64748b;
-  margin-top: 3px;
+  margin-top: 2px;
   line-height: 1.25;
 }
 
@@ -583,20 +583,20 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 4px;
 }
 
 .compliance-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 3px;
   justify-content: center;
 }
 
 .compliance-pill {
-  font-size: 0.59rem;
+  font-size: 0.56rem;
   font-weight: 700;
-  padding: 2px 5px;
+  padding: 1px 4px;
   background: #e2e8f0;
   color: #334155;
   border-radius: 3px;
@@ -610,15 +610,15 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  min-height: 95px;
+  min-height: 72px;
   width: 100%;
 }
 
 .signature-img {
-  width: 235px;
-  max-height: 100px;
+  width: 222px;
+  max-height: 78px;
   object-fit: contain;
-  margin-bottom: -34px;
+  margin-bottom: -10px;
   z-index: 3;
   pointer-events: none;
   user-select: none;

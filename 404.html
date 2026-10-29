@@ -13,8 +13,8 @@
       var search = window.location.search;
       var hash = window.location.hash;
 
-      // 1. Redirección para /validar sin .html
-      if (path === '/validar' || path === '/validar/' || path === '/certificados' || path === '/cert') {
+      // 1. Redirección automática si la URL contiene consulta de certificado o /validar
+      if (search.includes('id=') || search.includes('code=') || path.toLowerCase().includes('validar') || path === '/certificados' || path === '/cert') {
         window.location.replace('/validar.html' + search + hash);
         return;
       }
@@ -22,7 +22,6 @@
       // 2. Normalización de mayúsculas/minúsculas en Files/certs
       var lowerPath = path.toLowerCase();
       if (lowerPath.includes('/files/certs/') || lowerPath.includes('/files/certs/')) {
-        // Corregir case a Files/certs/
         var correctedPath = path.replace(/\/files\/certs\//i, '/Files/certs/');
         if (correctedPath !== path) {
           window.location.replace(correctedPath + search + hash);

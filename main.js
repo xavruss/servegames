@@ -419,6 +419,7 @@ function renderFooter(company) {
                 <p>Desarrollo de Software</p>
                 <p>Seguridad Electrónica</p>
                 <p>Networking & Fibra</p>
+                <p><a href="validar.html" style="color: #38bdf8; text-decoration: none; font-weight: 600;">Validar Certificados &rarr;</a></p>
             </div>
         </div>
         <div class="copyright">

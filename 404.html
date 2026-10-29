@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página No Encontrada | ServeGames</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="Img/SG_seamless_v0.png" type="image/png">
+  <script>
+    // Enrutador inteligente para GitHub Pages (manejo de mayúsculas y rutas cortas)
+    (function() {
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+
+      // 1. Redirección para /validar sin .html
+      if (path === '/validar' || path === '/validar/' || path === '/certificados' || path === '/cert') {
+        window.location.replace('/validar.html' + search + hash);
+        return;
+      }
+
+      // 2. Normalización de mayúsculas/minúsculas en Files/certs
+      var lowerPath = path.toLowerCase();
+      if (lowerPath.includes('/files/certs/') || lowerPath.includes('/files/certs/')) {
+        // Corregir case a Files/certs/
+        var correctedPath = path.replace(/\/files\/certs\//i, '/Files/certs/');
+        if (correctedPath !== path) {
+          window.location.replace(correctedPath + search + hash);
+          return;
+        }
+      }
+    })();
+  </script>
+  <style>
+    body {
+      background: #070a12;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .error-code {
+      font-size: 5rem;
+      font-weight: 900;
+      color: #ff2a2a;
+      letter-spacing: -0.05em;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 30px rgba(255, 42, 42, 0.4);
+    }
+    .error-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .error-desc {
+      color: #94a3b8;
+      max-width: 480px;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-link {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+    .btn-primary {
+      background: #0284c7;
+      color: #fff;
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+  </style>
+</head>
+<body>
+  <div class="error-code">404</div>
+  <h1 class="error-title">Página o Documento No Encontrado</h1>
+  <p class="error-desc">La dirección solicitada no existe o ha sido movida. Puedes consultar la validez de cualquier certificado técnico en nuestro portal oficial.</p>
+  <div class="error-actions">
+    <a href="Index.html" class="btn-link btn-secondary">&larr; Volver al Inicio</a>
+    <a href="validar.html" class="btn-link btn-primary">Portal de Validación &rarr;</a>
+  </div>
+</body>
+</html>

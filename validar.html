@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificación Digital de Certificados | ServeGames</title>
+  <meta name="description" content="Portal oficial de consulta y validación técnica de certificados emitidos por ServeGames & Xavier Figueroa para trámites ITSE / Defensa Civil.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="Img/SG_seamless_v0.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --portal-bg: #070a12;
+      --portal-card: #0f172a;
+      --portal-border: rgba(255, 255, 255, 0.12);
+      --portal-neon-red: #ff2a2a;
+      --portal-neon-blue: #0284c7;
+      --portal-emerald: #10b981;
+    }
+
+    body {
+      background-color: var(--portal-bg);
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Verification Hero */
+    .val-hero {
+      padding: 7rem 1.5rem 3rem 1.5rem;
+      background: radial-gradient(circle at 50% 20%, rgba(2, 132, 199, 0.18) 0%, rgba(7, 10, 18, 0.95) 75%);
+      text-align: center;
+      position: relative;
+      border-bottom: 1px solid var(--portal-border);
+    }
+
+    .val-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.35rem 0.9rem;
+      border-radius: 30px;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .val-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.8rem;
+      line-height: 1.2;
+    }
+
+    .val-title span {
+      color: #38bdf8;
+      text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    }
+
+    .val-desc {
+      max-width: 680px;
+      margin: 0 auto 2rem auto;
+      font-size: 0.95rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* Search Box */
+    .val-search-box {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .val-search-form {
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid var(--portal-border);
+      padding: 6px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .val-input {
+      flex: 1;
+      min-width: 220px;
+      background: transparent;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-family: 'Space Grotesk', monospace;
+      outline: none;
+    }
+
+    .val-input::placeholder {
+      color: #64748b;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .val-btn-search {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.4rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .val-btn-search:hover {
+      background: linear-gradient(135deg, #0369a1, #1d4ed8);
+      box-shadow: 0 0 15px rgba(2, 132, 199, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .val-btn-qr {
+      background: rgba(255, 255, 255, 0.08);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.2s ease;
+    }
+
+    .val-btn-qr:hover {
+      background: rgba(56, 189, 248, 0.18);
+      color: #ffffff;
+      border-color: #38bdf8;
+    }
+
+    .quick-chips {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .chip-label {
+      font-size: 0.76rem;
+      color: #64748b;
+    }
+
+    .quick-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-family: 'Space Grotesk', monospace;
+      font-size: 0.74rem;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .quick-chip:hover {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    /* Content Results Area */
+    .val-content {
+      flex: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      width: 100%;
+    }
+
+    /* Status Card */
+    .val-result-card {
+      background: #0f172a;
+      border: 1px solid var(--portal-border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      margin-bottom: 2rem;
+      display: none;
+    }
+
+    .val-card-header {
+      background: rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid var(--portal-border);
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .val-status-flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 800;
+      font-size: 0.88rem;
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+    }
+
+    .status-vigente {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .status-cumplido {
+      background: rgba(148, 163, 184, 0.15);
+      color: #cbd5e1;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulseBeacon 2s infinite;
+    }
+
+    @keyframes pulseBeacon {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.8); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .val-card-body {
+      padding: 1.75rem;
+    }
+
+    .val-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .val-field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .val-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 3px;
+    }
+
+    .val-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+
+    .val-code-highlight {
+      font-family: 'Space Grotesk', monospace;
+      color: #38bdf8;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .val-actions-bar {
+      border-top: 1px solid var(--portal-border);
+      padding-top: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .btn-action-primary {
+      background: #0284c7;
+      color: #fff;
+    }
+
+    .btn-action-primary:hover {
+      background: #0369a1;
+      transform: translateY(-1px);
+    }
+
+    .btn-action-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-action-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    /* Embedded Iframe Preview */
+    .val-preview-frame-box {
+      margin-top: 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--portal-border);
+      background: #0b0f19;
+      height: 850px;
+      display: block;
+    }
+
+    .val-preview-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Empty / Not Found State */
+    .val-not-found {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: rgba(17, 24, 39, 0.6);
+      border: 1px dashed rgba(239, 68, 68, 0.4);
+      border-radius: 16px;
+      display: none;
+    }
+
+    .val-not-found h3 {
+      font-size: 1.25rem;
+      color: #f87171;
+      margin-bottom: 0.5rem;
+    }
+
+    .val-not-found p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* Compliance Badges List */
+    .norm-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 4px;
+    }
+
+    .norm-pill {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #38bdf8;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    /* Modal Escáner QR */
+    .qr-modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .qr-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .qr-modal {
+      background: #111827;
+      border: 1px solid var(--portal-border);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 460px;
+      padding: 1.5rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    .qr-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .qr-modal-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .qr-reader-container {
+      width: 100%;
+      min-height: 250px;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .qr-file-drop {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 2px dashed rgba(56, 189, 248, 0.4);
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      background: rgba(56, 189, 248, 0.05);
+      transition: all 0.2s ease;
+    }
+
+    .qr-file-drop:hover {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: #38bdf8;
+    }
+  </style>
+
+  <!-- Biblioteca para Escanear QR en Navegador -->
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="Index.html" class="nav-logo">
+        <span class="red">S</span>G
+      </a>
+      <ul class="nav-menu">
+        <li><a href="Index.html#hero">Inicio</a></li>
+        <li><a href="Index.html#about">Nosotros</a></li>
+        <li><a href="Index.html#services">Servicios</a></li>
+        <li><a href="Index.html#projects">Portafolio</a></li>
+        <li><a href="validar.html" style="color: #38bdf8; font-weight: 700;">Validar Certificado</a></li>
+        <li><a href="Index.html#contact" class="btn-contact">Contacto</a></li>
+      </ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero & Search -->
+  <section class="val-hero">
+    <div class="val-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+      Acreditación Oficial &bull; ITSE &bull; RNE &bull; NFPA
+    </div>
+    <h1 class="val-title">Verificación de <span>Certificados</span></h1>
+    <p class="val-desc">
+      Consulte y valide la autenticidad, vigencia técnica y firmas digitales de los certificados de operatividad emitidos por Xavier Figueroa y ServeGames.
+    </p>
+
+    <div class="val-search-box">
+      <form class="val-search-form" id="search-form" onsubmit="event.preventDefault(); handleSearch();">
+        <input type="text" id="cert-input" class="val-input" placeholder="Código (ej. XF-CER-F-2026-0001) o R.U.C." autocomplete="off" spellcheck="false" value="XF-CER-F-2026-0001">
+        
+        <button type="button" class="val-btn-qr" onclick="openQrScannerModal()" title="Escanear Código QR con Cámara o Imagen">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h6v6H4V4zm2 2v2h2V6H6zm8-2h6v6h-6V4zm2 2v2h2V6h-2zM4 14h6v6H4v-6zm2 2v2h2v-2H6zm10 0h2v2h-2v-2zm-2-2h2v2h-2v-2zm4 4h2v2h-2v-2zm-2 2h2v2h-2v-2zm0-4h2v2h-2v-2z"/></svg>
+          Escanear QR
+        </button>
+
+        <button type="submit" class="val-btn-search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          Consultar
+        </button>
+      </form>
+
+      <div class="quick-chips">
+        <span class="chip-label">Certificados emitidos:</span>
+        <button class="quick-chip" onclick="quickFill('XF-CER-F-2026-0001')">XF-CER-F-2026-0001 (Incendios)</button>
+        <button class="quick-chip" onclick="quickFill('XF-CER-EC-2026-0001')">XF-CER-EC-2026-0001 (CCTV)</button>
+        <button class="quick-chip" onclick="quickFill('XF-CER-F-2026-0002')">XF-CER-F-2026-0002 (Sede 2)</button>
+        <button class="quick-chip" onclick="quickFill('20404581741')">RUC: 20404581741</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Area -->
+  <main class="val-content">
+    
+    <!-- Success Verification Card -->
+    <div class="val-result-card" id="result-card">
+      <div class="val-card-header">
+        <div>
+          <span class="val-label">Documento Auténtico</span>
+          <div class="val-code-highlight" id="res-code">-</div>
+        </div>
+        <div id="res-status-badge" class="val-status-flag status-vigente">
+          <span class="pulse-dot"></span> VIGENTE &amp; CONFORME
+        </div>
+      </div>
+
+      <div class="val-card-body">
+        <div class="val-grid">
+          <div class="val-field" style="grid-column: 1 / -1;">
+            <span class="val-label">Institución / Razón Social del Cliente</span>
+            <span class="val-value" id="res-client" style="font-size: 1.1rem; color: #fff;">-</span>
+          </div>
+
+          <div class="val-field">
+            <span class="val-label">Número de R.U.C.</span>
+            <span class="val-value" id="res-ruc" style="font-family: monospace;">-</span>
+          </div>
+
+          <div class="val-field">
+            <span class="val-label">Entidad Emisora</span>
+            <span class="val-value" id="res-entidad">-</span>
+          </div>
+
+          <div class="val-field">
+            <span class="val-label">Fecha de Expedición</span>
+            <span class="val-value" id="res-emision">-</span>
+          </div>
+
+          <div class="val-field">
+            <span class="val-label">Garantía / Vigencia Técnica</span>
+            <span class="val-value" id="res-garantia" style="color: #38bdf8;">-</span>
+          </div>
+
+          <div class="val-field" style="grid-column: 1 / -1;">
+            <span class="val-label">Disciplina / Objeto de Certificación</span>
+            <span class="val-value" id="res-descripcion">-</span>
+          </div>
+
+          <div class="val-field" style="grid-column: 1 / -1;">
+            <span class="val-label">Normativas &amp; Estándares Acreditados</span>
+            <div class="norm-pills" id="res-normativas"></div>
+          </div>
+        </div>
+
+        <div class="val-actions-bar">
+          <a href="#" target="_blank" id="btn-open-direct" class="btn-action btn-action-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+            Abrir Certificado en Pantalla Completa
+          </a>
+
+          <button onclick="copyValidationLink()" class="btn-action btn-action-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+            Copiar Enlace
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Iframe Container -->
+    <div class="val-preview-frame-box" id="preview-box">
+      <iframe src="" class="val-preview-iframe" id="preview-iframe" title="Visor de Certificado Oficial"></iframe>
+    </div>
+
+    <!-- Not Found State -->
+    <div class="val-not-found" id="not-found-card">
+      <h3>⚠️ No se encontró el documento</h3>
+      <p>Verifique que el código esté escrito correctamente (ej: <strong>XF-CER-F-2026-0001</strong>) o intente buscar por el número de R.U.C. del cliente evaluado.</p>
+    </div>
+
+  </main>
+
+  <!-- MODAL ESCÁNER QR -->
+  <div class="qr-modal-overlay" id="qr-modal">
+    <div class="qr-modal">
+      <div class="qr-modal-header">
+        <div class="qr-modal-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#38bdf8"><path d="M4 4h6v6H4V4zm2 2v2h2V6H6zm8-2h6v6h-6V4zm2 2v2h2V6h-2zM4 14h6v6H4v-6zm2 2v2h2v-2H6zm10 0h2v2h-2v-2zm-2-2h2v2h-2v-2zm4 4h2v2h-2v-2zm-2 2h2v2h-2v-2zm0-4h2v2h-2v-2z"/></svg>
+          Escanear Código QR
+        </div>
+        <button style="background:none; border:none; color:#94a3b8; font-size:1.5rem; cursor:pointer;" onclick="closeQrScannerModal()">&times;</button>
+      </div>
+
+      <div class="qr-reader-container" id="qr-reader">
+        <p style="color:#94a3b8; font-size:0.85rem;" id="qr-reader-status">Iniciando cámara...</p>
+      </div>
+
+      <div class="qr-file-drop" onclick="document.getElementById('qr-file-input').click()">
+        <input type="file" id="qr-file-input" accept="image/*" style="display:none;" onchange="handleQrFile(this.files[0])">
+        <p style="font-size:0.85rem; color:#38bdf8; font-weight:600;">📁 O selecciona una foto / captura del QR</p>
+        <span style="font-size:0.75rem; color:#64748b;">Haz clic aquí para cargar desde tu dispositivo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container" style="text-align: center; padding: 2rem 1rem; color: #64748b; font-size: 0.85rem; border-top: 1px solid var(--portal-border);">
+      <p>&copy; 2026 ServeGames &amp; Xavier Figueroa. Todos los derechos reservados.</p>
+      <p style="margin-top: 4px; font-size: 0.75rem;">Sistema de Control Documentario y Validación Digital para Huánuco y todo el Perú.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ===============================================================
+    // BASE DE DATOS LOCAL EMBEBIDA (FUNCIONA TANTO EN LOCAL COMO EN HOSTING)
+    // ===============================================================
+    const EMBEDDED_CERTS = [
+      {
+        "codigo": "XF-CER-F-2026-0001",
+        "anio": 2026,
+        "tipo": "CER",
+        "disciplina": "F (Alarma Contra Incendios)",
+        "entidad": "Xavier Figueroa / ServeGames",
+        "cliente": "PROMOTORA DE SERVICIOS EDUCATIVOS 'LA DIVINA MISERICORDIA' S.R.L.",
+        "ruc": "20404581741",
+        "direccion": "JR. CRESPO CASTILLO NRO 667, HUÁNUCO",
+        "descripcion": "Constancia de Operatividad y Garantía del Sistema de Detección Temprana y Alarma Centralizada Contra Incendios",
+        "fecha_emision": "29 de Octubre de 2026",
+        "garantia_hasta": "29 de Octubre de 2027",
+        "estado": "VIGENTE",
+        "normativas": ["RNE NORMA A.130", "NFPA 72", "NTP 350.043", "ITSE / CNE"],
+        "ruta_html": "Files/certs/2026/CER/XF-CER-F-2026-0001.html"
+      },
+      {
+        "codigo": "XF-CER-EC-2026-0001",
+        "anio": 2026,
+        "tipo": "CER",
+        "disciplina": "EC (CCTV & Video Vigilancia)",
+        "entidad": "Xavier Figueroa / ServeGames",
+        "cliente": "PROMOTORA DE SERVICIOS EDUCATIVOS 'LA DIVINA MISERICORDIA' S.R.L.",
+        "ruc": "20404581741",
+        "direccion": "JR. CRESPO CASTILLO NRO 667, HUÁNUCO",
+        "descripcion": "Certificado Técnico de Capacidad y Retención de Video en Sistema NVR / CCTV - Protocolo de Sobreescritura Cíclica (Límite Máximo 15 Días)",
+        "fecha_emision": "28 de Octubre de 2026",
+        "garantia_hasta": "28 de Octubre de 2027",
+        "estado": "VIGENTE",
+        "normativas": ["RNE", "ITSE", "NTP CCTV"],
+        "ruta_html": "Files/certs/2026/CER/XF-CER-EC-2026-0001.html"
+      },
+      {
+        "codigo": "XF-CER-F-2026-0002",
+        "anio": 2026,
+        "tipo": "CER",
+        "disciplina": "F (Alarma Contra Incendios)",
+        "entidad": "Xavier Figueroa / ServeGames",
+        "cliente": "PROMOTORA DE SERVICIOS EDUCATIVOS 'LA DIVINA MISERICORDIA' S.R.L.",
+        "ruc": "20404581741",
+        "direccion": "JR. CRESPO CASTILLO NRO 667, HUÁNUCO",
+        "descripcion": "Constancia de Operatividad y Garantía de Sistema Contra Incendios (Sede Anexa)",
+        "fecha_emision": "29 de Octubre de 2026",
+        "garantia_hasta": "29 de Octubre de 2027",
+        "estado": "VIGENTE",
+        "normativas": ["RNE NORMA A.130", "NFPA 72"],
+        "ruta_html": "Files/certs/2026/CER/XF-CER-F-2026-0002.html"
+      },
+      {
+        "codigo": "XF-CER-F-2024-0001",
+        "anio": 2024,
+        "tipo": "CER",
+        "disciplina": "F (Alarma Contra Incendios)",
+        "entidad": "Xavier Figueroa / ServeGames",
+        "cliente": "PROMOTORA DE SERVICIOS EDUCATIVOS 'LA DIVINA MISERICORDIA' S.R.L.",
+        "ruc": "20404581741",
+        "direccion": "JR. CRESPO CASTILLO NRO 667, HUÁNUCO",
+        "descripcion": "Constancia de Operatividad y Garantía del Sistema de Detección y Alarma Contra Incendios (Histórico)",
+        "fecha_emision": "15 de Octubre de 2024",
+        "garantia_hasta": "15 de Octubre de 2025",
+        "estado": "CUMPLIDO",
+        "normativas": ["RNE NORMA A.130", "NFPA 72"],
+        "ruta_html": "Files/certs/2024/CER/XF-CER-F-2024-0001.html"
+      }
+    ];
+
+    let certsDatabase = [...EMBEDDED_CERTS];
+    let currentCert = null;
+    let html5QrCode = null;
+
+    // Cargar base remota adicional si está en HTTP/HTTPS
+    async function initDatabase() {
+      if (window.location.protocol.startsWith('http')) {
+        try {
+          const res = await fetch('Files/certs/certs_index.json');
+          if (res.ok) {
+            const data = await res.json();
+            if (Array.isArray(data) && data.length > 0) {
+              certsDatabase = data;
+            }
+          }
+        } catch (err) {
+          console.log('Usando base de certificados embebida');
+        }
+      }
+
+      // Chequear parámetro URL: ?id=... o ?code=...
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get('id') || urlParams.get('code') || urlParams.get('doc');
+      
+      if (query) {
+        document.getElementById('cert-input').value = query;
+        performSearch(query);
+      } else {
+        // Cargar por defecto el certificado actual emitido para demostración inmediata
+        performSearch(document.getElementById('cert-input').value || 'XF-CER-F-2026-0001');
+      }
+    }
+
+    function quickFill(code) {
+      document.getElementById('cert-input').value = code;
+      performSearch(code);
+    }
+
+    function handleSearch() {
+      const q = document.getElementById('cert-input').value.trim();
+      if (q) performSearch(q);
+    }
+
+    function performSearch(term) {
+      // Extraer si el usuario pegó una URL completa (ej: desde un escáner QR externo)
+      let cleanTerm = term;
+      if (cleanTerm.includes('id=')) {
+        try {
+          const u = new URL(cleanTerm.startsWith('http') ? cleanTerm : 'http://x.com/' + cleanTerm);
+          cleanTerm = u.searchParams.get('id') || cleanTerm;
+        } catch(e) {}
+      }
+
+      const normalizedTerm = cleanTerm.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const resultCard = document.getElementById('result-card');
+      const notFoundCard = document.getElementById('not-found-card');
+      const previewBox = document.getElementById('preview-box');
+
+      const found = certsDatabase.find(c => {
+        const cCode = (c.codigo || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        const cRuc = (c.ruc || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        return cCode.includes(normalizedTerm) || cRuc.includes(normalizedTerm);
+      });
+
+      if (found) {
+        currentCert = found;
+        notFoundCard.style.display = 'none';
+        resultCard.style.display = 'block';
+
+        document.getElementById('res-code').textContent = found.codigo;
+        document.getElementById('res-client').textContent = found.cliente;
+        document.getElementById('res-ruc').textContent = found.ruc;
+        document.getElementById('res-entidad').textContent = found.entidad;
+        document.getElementById('res-emision').textContent = found.fecha_emision;
+        document.getElementById('res-garantia').textContent = found.garantia_hasta;
+        document.getElementById('res-descripcion').textContent = found.descripcion;
+
+        const badge = document.getElementById('res-status-badge');
+        if (found.estado === 'VIGENTE') {
+          badge.className = 'val-status-flag status-vigente';
+          badge.innerHTML = '<span class="pulse-dot"></span> VIGENTE &amp; CONFORME';
+        } else {
+          badge.className = 'val-status-flag status-cumplido';
+          badge.innerHTML = '✓ CUMPLIDO (HISTÓRICO)';
+        }
+
+        const pillsContainer = document.getElementById('res-normativas');
+        pillsContainer.innerHTML = (found.normativas || []).map(n => `<span class="norm-pill">${n}</span>`).join('');
+
+        const btnOpen = document.getElementById('btn-open-direct');
+        btnOpen.href = found.ruta_html;
+
+        // Cargar iframe de vista previa
+        document.getElementById('preview-iframe').src = found.ruta_html;
+        previewBox.style.display = 'block';
+
+        // Actualizar URL sin recargar
+        if (window.location.protocol.startsWith('http')) {
+          const newUrl = `${window.location.pathname}?id=${encodeURIComponent(found.codigo)}`;
+          window.history.replaceState({ path: newUrl }, '', newUrl);
+        }
+
+      } else {
+        resultCard.style.display = 'none';
+        previewBox.style.display = 'none';
+        notFoundCard.style.display = 'block';
+      }
+    }
+
+    function copyValidationLink() {
+      const code = currentCert ? currentCert.codigo : document.getElementById('cert-input').value;
+      const url = `https://sgdigital.net/validar.html?id=${encodeURIComponent(code)}`;
+      navigator.clipboard.writeText(url).then(() => {
+        alert('Enlace oficial copiado al portapapeles:\n' + url);
+      });
+    }
+
+    // ===============================================================
+    // ESCÁNER QR EN VIVO (CÁMARA Y ARCHIVO)
+    // ===============================================================
+    function openQrScannerModal() {
+      const modal = document.getElementById('qr-modal');
+      modal.classList.add('active');
+
+      if (typeof Html5Qrcode !== 'undefined') {
+        html5QrCode = new Html5Qrcode("qr-reader");
+        html5QrCode.start(
+          { facingMode: "environment" },
+          { fps: 10, qrbox: { width: 220, height: 220 } },
+          (decodedText) => {
+            onQrCodeDetected(decodedText);
+          },
+          (errorMessage) => {
+            // Ignorar errores continuos de búsqueda de frame
+          }
+        ).catch(err => {
+          document.getElementById('qr-reader-status').innerText = 'Cámara no disponible o permiso denegado. Puedes cargar una foto del QR abajo.';
+        });
+      } else {
+        document.getElementById('qr-reader-status').innerText = 'Puedes seleccionar una imagen del QR usando el botón de abajo.';
+      }
+    }
+
+    function closeQrScannerModal() {
+      const modal = document.getElementById('qr-modal');
+      modal.classList.remove('active');
+      if (html5QrCode) {
+        try {
+          html5QrCode.stop().then(() => html5QrCode.clear());
+        } catch (e) {}
+      }
+    }
+
+    function onQrCodeDetected(text) {
+      closeQrScannerModal();
+      document.getElementById('cert-input').value = text;
+      performSearch(text);
+    }
+
+    function handleQrFile(file) {
+      if (!file) return;
+      if (typeof Html5Qrcode !== 'undefined') {
+        const qrCode = new Html5Qrcode("qr-reader");
+        qrCode.scanFile(file, true)
+          .then(decodedText => {
+            onQrCodeDetected(decodedText);
+          })
+          .catch(err => {
+            alert('No se detectó un código QR legible en la imagen seleccionada.');
+          });
+      }
+    }
+
+    // Toggle Mobile Menu
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    if (mobileMenu) {
+      mobileMenu.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initDatabase);
+  </script>
+</body>
+</html>
